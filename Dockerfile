@@ -2,6 +2,7 @@ FROM python:3.7-alpine
 RUN adduser -D net
 WORKDIR /app
 RUN apk add linux-headers
+RUN apk add --update python3-dev build-base
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
 
