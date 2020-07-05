@@ -2,9 +2,9 @@ FROM python:3.8-alpine
 RUN adduser -D net
 WORKDIR /app
 
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
-COPY . /app
+COPY requirements.txt /
+RUN pip install -r /requirements.txt
+COPY src/ /app
 COPY start.sh ./
 RUN chmod +x start.sh
 
