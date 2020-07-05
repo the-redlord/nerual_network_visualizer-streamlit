@@ -1,12 +1,12 @@
-FROM python:3.7-alpine
+FROM python:3.8-slim-buster
 RUN adduser -D net
 WORKDIR /app
-RUN apk add linux-headers
-RUN apk add --update python3-dev build-base
+# RUN apk add linux-headers
+# RUN apk add --update python3-dev build-base
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
 
-COPY src/ /app
+COPY . /app
 COPY start.sh ./
 RUN chmod +x start.sh
 
