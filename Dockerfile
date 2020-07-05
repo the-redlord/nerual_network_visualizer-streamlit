@@ -1,10 +1,10 @@
 FROM python:3.8-alpine
 RUN adduser -D net
 WORKDIR /app
-
+RUN pip install wheel setuptools
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
-RUN pip install wheel setuptools
+
 COPY src/ /app
 COPY start.sh ./
 RUN chmod +x start.sh
