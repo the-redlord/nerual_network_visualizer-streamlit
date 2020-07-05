@@ -1,6 +1,7 @@
 FROM python:3.8-alpine
 RUN adduser -D net
 WORKDIR /app
+RUN apk add linux-headers
 RUN pip install grpcio
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
