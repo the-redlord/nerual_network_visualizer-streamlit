@@ -1,5 +1,5 @@
 FROM python:3.8-slim-buster
-RUN adduser -D net
+RUN adduser net
 WORKDIR /app
 # RUN apk add linux-headers
 # RUN apk add --update python3-dev build-base
