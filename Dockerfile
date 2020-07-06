@@ -2,7 +2,7 @@ FROM python:3.8-alpine
 # RUN adduser net
 WORKDIR /app
 # RUN apk add linux-headers
-RUN apk add --update python3-dev build-base
+RUN apk add --update gcc
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
 
