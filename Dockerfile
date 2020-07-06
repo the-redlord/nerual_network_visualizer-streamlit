@@ -1,8 +1,8 @@
-FROM python:3.8-alpine
+FROM python:3.8-slim-buster
 # RUN adduser net
 WORKDIR /app
 # RUN apk add linux-headers
-RUN apk add --update build-base
+# RUN apk add --update build-base
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
 
